@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "prime_8"
+require 'cri'
+
+command = Cri::Command.define do
+  name        'print'
+  usage       'usage: print [options]'
+  summary     'prints a table of primes'
+  description <<-EOS
+  Just printing some primes, thank you.
+  Move along, nothin to see here.
+  EOS
+  run do |opts, args|
+    Prime8::ReportTable.new(args[0].to_i).run
+  end
+end
+
+command.run(ARGV)
+
