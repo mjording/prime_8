@@ -5,7 +5,7 @@ require "prime_8"
 require 'cri'
 
 command = Cri::Command.define do
-  name        'print'
+  name        'show_primes'
   usage       'usage: print [options]'
   summary     'prints a table of primes'
   description <<-EOS
@@ -18,4 +18,3 @@ command = Cri::Command.define do
 end
 
 command.run(ARGV)
-
